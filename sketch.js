@@ -16,18 +16,18 @@ let backgroundMusic; // Pozadí hudby.
 let placeBlockSound; //Zvuk při pokládání bloku
 let loseSound; //Zvuk při prohře
 let winSound; //Zvuk při výhře
-let hasWon = false;
+let hasWon = false; //Jestli hráč vyhral
 
-let gameOverScreen;
-let winScreen;
+let gameOverScreen; //Obrazovka při prohře
+let winScreen; //Obrazovka při výhře
 
 function preload() {
   backgroundMusic = loadSound('suits-you-69233.mp3'); // Načte hudbu na pozadí.
-  placeBlockSound = loadSound('coin-recieved-230517.mp3');
-  loseSound = loadSound('mixkit-retro-arcade-game-over-470.wav');
-  winSound = loadSound('yippee-147032.mp3');
-  gameOverScreen = loadImage('cfeb1-17307905668565.jpg');
-  winScreen = loadImage('36777-90.jpg');
+  placeBlockSound = loadSound('coin-recieved-230517.mp3'); //Načte zvuk pro pokládání
+  loseSound = loadSound('mixkit-retro-arcade-game-over-470.wav'); //Načte zvuk při prohře
+  winSound = loadSound('yippee-147032.mp3'); //Načte zvuk při výhře
+  gameOverScreen = loadImage('cfeb1-17307905668565.jpg'); //Načte obrazovku při prohře
+  winScreen = loadImage('36777-90.jpg'); //Načte obrazovku při výhře
   
 }
 
@@ -46,7 +46,7 @@ function draw() {
     updateBlock(); // Aktualizuje pozici pohybujícího se bloku.
     drawBlocks(); // Vykreslí všechny bloky.
   } else if(menuState === stateLose) {
-    if (gameOverScreen){
+    if (gameOverScreen){ //Nastaví obrazovku pro prohru
     imageMode(CORNER);
     image(gameOverScreen, 0, 0, width, height)
   } else {
@@ -61,7 +61,7 @@ function draw() {
     
     backgroundMusic.stop(); // Zastaví hudbu při prohře.
   } else if(menuState === stateWin) {
-    if (winScreen){
+    if (winScreen){ //NAstaví obrazovku pro výhru
     imageMode(CORNER);
     image(winScreen, 0, 0, width, height)
   } else {
@@ -76,7 +76,7 @@ function draw() {
    
     if (!hasWon) { // Pokud hráč ještě nevyhrál.
       winSound.play(); // Přehrát zvuk výhry.
-      hasWon = true; // Nastavit flag, že hráč vyhrál.
+      hasWon = true; // Nastaví, že hráč vyhrál.
     }
   }  
 }
@@ -89,7 +89,7 @@ function keyReleased() {
       newGame(); // Restartuje hru, pokud je hra v jiném stavu.
       menuState = statePlaying;
       backgroundMusic.loop(); // Spustí hudbu na pozadí při restartu.
-      hasWon = false;
+      hasWon = false; // Nastaví, že hráč nevyhrál
     }
   }
 }
