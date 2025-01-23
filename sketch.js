@@ -14,20 +14,20 @@ const stateWin = "win"; // Stav hry: hráč vyhrál.
 let menuState = statePlaying; // Aktuální stav hry.
 let backgroundMusic; // Pozadí hudby.
 let placeBlockSound; //Zvuk při pokládání bloku
-let loseSound; //Zvuk při prohře
-let winSound; //Zvuk při výhře
-let hasWon = false; //Jestli hráč vyhral
+let loseSound; //Zvuk při prohře.
+let winSound; //Zvuk při výhře.
+let hasWon = false; //Jestli hráč vyhral.
 
-let gameOverScreen; //Obrazovka při prohře
-let winScreen; //Obrazovka při výhře
+let gameOverScreen; //Obrazovka při prohře.
+let winScreen; //Obrazovka při výhře.
 
 function preload() {
   backgroundMusic = loadSound('suits-you-69233.mp3'); // Načte hudbu na pozadí.
-  placeBlockSound = loadSound('coin-recieved-230517.mp3'); //Načte zvuk pro pokládání
-  loseSound = loadSound('mixkit-retro-arcade-game-over-470.wav'); //Načte zvuk při prohře
-  winSound = loadSound('yippee-147032.mp3'); //Načte zvuk při výhře
-  gameOverScreen = loadImage('cfeb1-17307905668565.jpg'); //Načte obrazovku při prohře
-  winScreen = loadImage('36777-90.jpg'); //Načte obrazovku při výhře
+  placeBlockSound = loadSound('coin-recieved-230517.mp3'); //Načte zvuk pro pokládání.
+  loseSound = loadSound('mixkit-retro-arcade-game-over-470.wav'); //Načte zvuk při prohře.
+  winSound = loadSound('yippee-147032.mp3'); //Načte zvuk při výhře.
+  gameOverScreen = loadImage('cfeb1-17307905668565.jpg'); //Načte obrazovku při prohře.
+  winScreen = loadImage('36777-90.jpg'); //Načte obrazovku při výhře.
   
 }
 
@@ -46,7 +46,7 @@ function draw() {
     updateBlock(); // Aktualizuje pozici pohybujícího se bloku.
     drawBlocks(); // Vykreslí všechny bloky.
   } else if(menuState === stateLose) {
-    if (gameOverScreen){ //Nastaví obrazovku pro prohru
+    if (gameOverScreen){ //Nastaví obrazovku pro prohru.
     imageMode(CORNER);
     image(gameOverScreen, 0, 0, width, height)
   } else {
