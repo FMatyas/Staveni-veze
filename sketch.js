@@ -34,7 +34,6 @@ function preload() {
 function setup() {
   createCanvas(600, 600); // Vytvoří herní plátno o velikosti 600x600 px
   textAlign(CENTER, CENTER); // Nastaví zarovnání textu na střed
-  rectMode(CENTER);
   newGame(); // Spustí novou hru
   backgroundMusic.loop(); // Spustí hudbu na pozadí
 }
