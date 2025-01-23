@@ -68,7 +68,7 @@ function draw() {
     background(20);
   }
     textSize(blockHeight * 2); // Zvýrazní text při výhře.
-    fill(0, 255, 0); // Nastaví zelenou barvu pro text.
+    fill(20); // Nastaví šedou barvu pro text.
     text("Vyhrál jsi !", width/2, height/2); // Zobrazí zprávu o výhře.
     textSize(blockHeight);
     text("Zmačkni mezerník, aby si začal novou hru!", width/2, height * 3/4);
